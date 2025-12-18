@@ -1,0 +1,1534 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+    /* 半透明黑色背景 */
+    color: #fff;
+}
+
+.header-inner {
+    max-width: 1024px;
+    /* 對照設計稿 */
+    margin: 0 auto;
+    padding: 16px 0 16px 0;
+    /* 左右都設為 0 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    /* 設定為0，避免logo下方出現間距 */
+    font-size: 24px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+
+.hero {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    /* 直接寫死 height: 400px; 會讓圖片在不同裝置下不夠彈性，建議改用 aspect-ratio 或其他 RWD 方式。 */
+    background-image: url('images/header_desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    /* 讓 hero 內部元素置中 */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.hero-inner {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    /* 透明度 35% */
+    padding: 32px 40px;
+    /* 上下 32px，左右 40px */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 460px;
+    /* 設計稿寬度 */
+    min-height: 152px;
+    /* 設計稿高度 */
+    margin: 0 auto;
+    /* 水平置中 */
+    box-sizing: border-box;
+}
+
+
+.hero-title {
+    font-size: 2rem;
+    /* 標題字體大小 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    /* 字體 */
+    font-weight: 300;
+    /* 字體粗細，400為正常，500為中等粗細 */
+    color: #fff;
+    /* 白色 */
+    margin-bottom: 12px;
+    /* 與副標間距 */
+    letter-spacing: 1px;
+    /* 字距 */
+    line-height: 1.2;
+    /* 行高 */
+}
+
+.hero-text {
+    font-size: 1rem;
+    /* 副標題字體大小，約16px */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    /* 字體 */
+    font-weight: 300;
+    /* 字體較細 */
+    color: #fff;
+    /* 白色 */
+    margin-bottom: 0;
+    /* 下方不留空 */
+    letter-spacing: 0.5px;
+    /* 字距微調 */
+    line-height: 1.5;
+    /* 行高，讓副標題更易讀 */
+}
+
+.hero-text i {
+    font-size: 16px;
+    /* 根據設計稿調整 */
+    margin-right: 8px;
+    /* icon 和文字間距 */
+    vertical-align: middle;
+    color: #fff;
+}
+
+
+
+
+/* 特色區塊外層，設定背景色與內外距，讓區塊與其他區域有明顯區隔 */
+.features {
+    background: #f8f5f2;
+    /* 淡米色背景，符合設計稿 */
+    padding: 64px 0;
+    /* 上下留白 64px，讓內容不會太擠 */
+    text-align: center;
+    /* 內容預設置中 */
+}
+
+
+/* 標題區塊（含左右線） */
+.features-title-wrap {
+    display: flex;
+    /* 讓內部元素橫向排列 */
+    align-items: center;
+    /* 垂直置中對齊 */
+    justify-content: center;
+    /* 水平置中 */
+    gap: 24px;
+    /* 標題與線條間距 */
+    margin-bottom: 40px;
+    /* 與下方內容的間距 */
+}
+
+/* 左右裝飾線條 */
+.features-title-line {
+    flex: 1;
+    /* 讓線條自動撐开，左右平均 */
+    height: 0.5px;
+    /* 線條高度 */
+    background: #3d3b3a;
+    /* 線條顏色（可依設計稿調整） */
+    max-width: 120px;
+    /* 線條最長寬度 */
+    opacity: 0.6;
+    /* 半透明效果 */
+}
+
+/* 標題本身 */
+.features-title {
+    font-size: 1rem;
+    /* 標題字體大小 */
+    color: #5b2e11;
+    /* 標題顏色 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    font-weight: 310;
+    /* 字體粗細 */
+    letter-spacing: 1px;
+    /* 字距 */
+    padding: 20px 0 16px 20px;
+    /* 標題左右內距 */
+    text-align: center;
+    /* 文字置中 */
+    line-height: 1.4;
+    /* 行高 */
+}
+
+
+/* 三欄排版，讓三個特色橫向排列 */
+.features-list {
+    display: flex;
+    /* 彈性盒子，橫向排列 */
+    justify-content: center;
+    /* 水平置中 */
+    gap: 32px;
+    /* 三欄間距 */
+    flex-wrap: wrap;
+    /* 超過寬度時自動換行，方便 RWD */
+}
+
+/* 每一個特色項目 */
+.feature-item {
+    width: 300px;
+    /* 固定寬度，讓三欄整齊 */
+    display: flex;
+    /* 彈性盒子，垂直排列內容 */
+    flex-direction: column;
+    /* 垂直排列 */
+    align-items: center;
+    /* 水平置中 */
+    margin-bottom: 32px;
+    /* RWD 時換行也有間距 */
+}
+
+/* 圓形圖片 */
+.feature-item img {
+    width: 220px;
+    /* 圖片寬度 */
+    height: 220px;
+    /* 圖片高度 */
+    border-radius: 50%;
+    /* 圓形效果 */
+    object-fit: cover;
+    /* 圖片填滿區塊且不變形 */
+    margin-bottom: 24px;
+    /* 圖片與標題間距 */
+}
+
+/* 特色標題 */
+.feature-item h3 {
+    font-size: 1.2rem;
+    /* 標題字體大小 */
+    color: #6A3906;
+    /* 標題顏色 */
+    margin-bottom: 12px;
+    /* 標題與說明間距 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    font-weight: 500;
+    /* 字體粗細 */
+}
+
+/* 特色說明文字 */
+.feature-item p {
+    color: #4B2E13;
+    /* 文字顏色 */
+    font-size: 1rem;
+    /* 字體大小 */
+    line-height: 1.6;
+    /* 行高，讓文字易讀 */
+    margin: 0;
+    /* 移除預設外距 */
+}
+
+
+
+
+/* 主廚區塊外層 */
+.chef {
+    background: #4B2E13;
+    /* 深咖啡色背景 */
+    padding: 64px 0;
+}
+
+/* 內部左右排版：主廚區塊的排版容器，用來做左右兩欄（flex），讓圖片和文字能並排。*/
+.chef-inner {
+    display: flex;
+    /* 左右排列 */
+    max-width: 1200px;
+    /* 最大寬度 */
+    margin: 0 auto;
+    /* 置中 */
+    align-items: stretch;
+    /* 讓左右高度一致 */
+}
+
+/* 左側圖片：專門包住主廚圖片，方便設定圖片寬度、背景、RWD 等。*/
+.chef-img {
+    flex: 1;
+    /* 佔一半寬度 */
+    min-width: 0;
+    overflow: hidden;
+}
+
+.chef-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 填滿且不變形 */
+    display: block;
+}
+
+/* 右側文字：專門包住主廚的標題和介紹文字，方便設定字體、間距、顏色等。*/
+.chef-info {
+    flex: 1;
+    /* 佔一半寬度 */
+    color: #fff;
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 標題 */
+.chef-title {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    font-weight: 400;
+}
+
+.chef-en-title {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.85;
+}
+
+/* 內容文字 */
+.chef-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #fff;
+    margin: 0;
+}
+
+
+
+/* 評論區塊外層 */
+.reviews {
+    background: #fcfbfa;
+    /* 淡米色背景，與其他區塊區隔 */
+    padding: 64px 0 64px 0;
+    /* 上下留白，讓內容不擁擠 */
+    text-align: center;
+    /* 內容預設置中 */
+}
+
+/* 標題樣式 */
+.reviews-title {
+    color: #6A3906;
+    /* 深咖啡色，呼應主色 */
+    font-size: 2rem;
+    /* 標題字體大小 */
+    margin-bottom: 48px;
+    /* 標題與下方評論區塊的間距 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    /* 使用正黑體 */
+    font-weight: 300;
+    /* 標題字體粗細 */
+}
+
+/* 評論列表，三欄橫向排列 */
+.reviews-list {
+    display: flex;
+    /* 彈性盒子，橫向排列 */
+    justify-content: center;
+    /* 水平置中 */
+    gap: 24px;
+    /* 每個評論間距 */
+    flex-wrap: wrap;
+    /* 超過寬度自動換行，方便 RWD */
+}
+
+/* 單一評論區塊 */
+.review-item {
+    display: flex;
+    /* 讓頭像和內容左右排列 */
+    align-items: flex-start;
+    /* 頭像與內容頂端對齊 */
+    width: 400px;
+    /* 可依設計稿調整 */
+    background: transparent;
+    margin-bottom: 32px;
+    text-align: left;
+    /* 內容靠左 */
+}
+
+/* 顧客頭像 */
+.review-avatar {
+    width: 90px;
+    /* 頭像寬度 */
+    height: 90px;
+    /* 頭像高度 */
+    border-radius: 50%;
+    /* 圓形頭像 */
+    object-fit: cover;
+    /* 填滿且不變形 */
+    margin-right: 24px;
+    /* 頭像和內容間距 */
+    flex-shrink: 0;
+}
+
+.review-info {
+    flex: 1;
+}
+
+/* 顧客名稱 */
+.review-name {
+    font-size: 1.5rem;
+    /* 名字字體大小 */
+    color: #6A3906;
+    /* 名字顏色 */
+    margin-bottom: 16px;
+    /* 名字與評論內容間距 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    /* 使用正黑體 */
+    font-weight: 300;
+    /* 名字字體粗細 */
+}
+
+/* 評論內容 */
+.review-content {
+    color: #4B2E13;
+    /* 內容文字顏色 */
+    font-size: 1.2rem;
+    /* 內容字體大小 */
+    line-height: 1.7;
+    /* 行高，讓文字易讀 */
+    margin-bottom: 24px;
+    /* 內容與職稱間距 */
+}
+
+.reviews p {
+    font-weight: 300;
+}
+
+
+/* 顧客職稱 */
+.review-job {
+    color: #a67c52;
+    /* 職稱顏色 */
+    font-size: 1.1rem;
+    /* 職稱字體大小 */
+    margin-top: 8px;
+    /* 職稱與上方內容間距 */
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    /* 使用正黑體 */
+    text-align: right;
+    /* 讓職稱靠右 */
+    width: 100%;
+    /* 讓 text-align: right 生效 */
+    display: block;
+    /* 讓 width: 100% 有效 */
+}
+
+
+
+
+
+
+
+/* 訂位區塊外層 */
+.booking {
+    background: #f4f2f2;
+    padding: 64px 0;
+}
+
+/* 內部左右排版 */
+.booking-inner {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 900px;
+    /* 460+386+gap，依實際內容調整 */
+    margin: 0 auto;
+    /* 讓內容區塊水平置中 */
+}
+
+.booking-title {
+    font-size: 2rem;
+    color: #6A3906;
+    margin-bottom: 42px;
+    text-align: center;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+
+/* 地圖區 */
+.booking-map {
+    flex: 1;
+    max-width: 460px;
+    display: flex;
+    align-items: flex-start;
+    /* 讓地圖內容頂端對齊 */
+}
+
+.booking-map img,
+.booking-map iframe {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    margin: 0;
+    /* 確保沒有多餘 margin */
+
+}
+
+/* 表單區 */
+.booking-form {
+    flex: 1;
+    max-width: 800px;
+    padding: 0 24px 24px 24px;
+    /* 上 0，左右下 24px */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+
+.booking-form label {
+    font-weight: 300;
+    margin-bottom: 4px;
+    color: #6A3906;
+    text-align: left;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="number"] {
+    padding: 8px 12px;
+    width: 406px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
+.booking-radio {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.booking-btns {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    justify-content: flex-end;
+    /* 向右對齊 */
+}
+
+.btn-cancel {
+    background: #aaa;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    background: #F07336;
+    color: #fff;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer {
+    background: #efeaea;
+    padding: 48px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.footer-info,
+.footer-contact {
+    flex: 1;
+}
+
+.footer-info h3,
+.footer-contact h3 {
+    color: #4B2E13;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-weight: 300;
+}
+
+.footer-info p,
+.footer-contact ul {
+    color: #4B2E13;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-contact ul {
+    list-style: disc inside;
+    padding: 0;
+}
+
+.footer-brand {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-brand h2 {
+    color: #4B2E13;
+    font-size: 3rem;
+    font-weight: 1000;
+    margin-bottom: 24px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 8px;
+}
+
+.footer-social img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: 36px;
+    /* 根據設計稿調整 */
+    color: #b84c2e;
+    /* Google+ */
+}
+
+.footer-social a:nth-child(2) i {
+    color: #41ABE1;
+}
+
+/* Twitter 藍 */
+.footer-social a:nth-child(3) i {
+    color: #3b5998;
+}
+
+/* Facebook 藍 */
+
+.footer-social i {
+    transition: color 0.2s;
+}
+
+.footer-social a:hover i {
+    opacity: 0.7;
+}
+
+
+
+
+
+/* 響應式設計：平板與手機 
+max-width: 1024px：平板以下，讓內容區塊寬度縮小、間距變小。
+max-width: 768px：手機版，所有 flex 容器改為 column（直排），內容全寬。
+max-width: 480px：小手機，字體、icon 再縮小，padding 再減少。
+booking、footer、chef 等區塊都會自動變成上下排列，icon 也會縮小
+*/
+@media (max-width: 1024px) {
+
+    .header-inner,
+    .footer-container,
+    .chef-inner,
+    .booking-inner {
+        max-width: 95vw;
+        padding: 0 16px;
+    }
+
+    .features-list,
+    .reviews-list {
+        gap: 16px;
+    }
+
+    .review-item,
+    .feature-item {
+        width: 90vw;
+        max-width: 350px;
+    }
+
+    .booking-inner {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header-inner,
+    .footer-container,
+    .chef-inner,
+    .booking-inner {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 100vw;
+        padding: 0 8px;
+    }
+
+    .features-list,
+    .reviews-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-item,
+    .feature-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .chef-inner,
+    .booking-inner {
+        gap: 24px;
+    }
+
+    .booking-map,
+    .booking-form {
+        max-width: 100%;
+    }
+
+    .footer-brand h2 {
+        font-size: 2rem;
+    }
+
+    .footer-info h3,
+    .footer-contact h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-inner {
+        width: 95vw;
+        padding: 16px 4px;
+    }
+
+    .features,
+    .chef,
+    .reviews,
+    .booking,
+    .footer {
+        padding: 32px 0;
+    }
+
+    .footer-brand h2 {
+        font-size: 1.3rem;
+    }
+
+    .footer-social a {
+        font-size: 24px;
+        margin: 0 4px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* product 頁專屬 */
+.product-content {
+    background: #efeaea;
+    padding-top: 0;
+    /* 確保沒有多餘 padding */
+    margin-top: 0;
+    /* 確保沒有多餘 margin */
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.product-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.search-panel {
+    max-width: 80%;
+    margin: 0 auto 24px auto;
+    padding: 0 12px;
+    margin-top: 0;
+}
+
+.search-inner {
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    min-height: 72px;
+    padding: 12px 18px;
+
+}
+
+
+.cart-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.checkout-text {
+    font-size: 14px;
+    color: #5a2b34;
+    margin-right: 4px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+
+.brand-small {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #5a2b34;
+    font-weight: 300;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.card-media {
+    position: relative;
+    /* ⭐ 定位基準 */
+    overflow: hidden;
+    /* ⭐ 裁掉多出來的角 */
+}
+
+.card-hot-ribbon {
+    position: absolute;
+    top: 16px;
+    right: -40px;
+    padding: 6px 40px;
+    background: #2ecc9f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    transform: rotate(45deg);
+}
+
+.card-badge-group {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    z-index: 2;
+}
+
+.card-fav i {
+    font-size: 20 px;
+    color: #fff;
+    /* 白色線條 */
+}
+
+.card-hot {
+    background: #19be6b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 2px 10px;
+    margin-top: 2px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.search-box {
+    max-width: 500px;
+    display: flex;
+    flex: 1;
+    gap: 8px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #d6c7c7;
+    border-radius: 3px;
+}
+
+.btn-search {
+    background: #4a2b22;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cart-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.cart-link {
+    color: #4a2b22;
+    font-size: 20px;
+}
+
+.cart-badge {
+    background: #e74c3c;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+}
+
+/* 主要內容區塊（分類＋商品） */
+.container-grid {
+    display: flex;
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.sidebar {
+    width: 220px;
+    flex-shrink: 0;
+}
+
+.categories {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.categories li {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e0d6d6;
+    color: #5a3b34;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.categories li.active {
+    background: #5a2b22;
+    color: #efeaea;
+    border-radius: 3px;
+}
+
+/* 商品卡片區 */
+.main-area {
+    flex: 1;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.product-card {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 6px 6px 0 0 rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-media img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 16px 12px 12px 12px;
+    text-align: center;
+}
+
+.card-body h3 {
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 24px;
+    font-weight: 300;
+    color: #3D1101;
+}
+
+.card-body h3::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 0.5px;
+    background: #363535;
+    margin: 8px auto 0 auto;
+    border-radius: 1px;
+}
+
+.card-body .en {
+    display: block;
+    font-family: MicrosoftJhengHeiRegular;
+    font-size: 15px;
+    color: #3D1101;
+}
+
+.price {
+    font-family: Roboto-Light;
+    font-size: 20px;
+    color: #3D1101;
+}
+
+.btn-cart {
+    width: 100%;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #f0a899;
+    background: transparent;
+    color: #e86b58;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-cart:hover {
+    background: #e86b58;
+    color: #fff;
+}
+
+/* RWD：平板與手機 */
+@media (max-width: 1024px) {
+    .product-features {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container-grid {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .features {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .card-media img {
+        height: 180px;
+    }
+
+    .search-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+}
+
+/* 登入頁專屬 */
+.login-content {
+    background: #f6f1ee;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 0 0 0;
+}
+
+.card-top-line {
+    max-width: 465px;
+    width: 100%;
+    height: 4px;
+    background-color: #f47c3c;
+    border-radius: 2px;
+    margin: 0 auto 0 auto;
+    margin-bottom: 0px;
+    /* 先不設間距，讓線緊貼卡片 */
+}
+
+.login-box {
+    border-radius: 1px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    padding: 32px 32px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16); /* 新增卡片陰影 */
+}
+
+.login-title {
+    font-size: 2.6rem;
+    color: #4a2b22;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    text-align: center;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+}
+
+.login-subtitle {
+    font-size: 1.1rem;
+    color: #4a2b22;
+    margin-bottom: 24px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.login-form-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4a2b22;
+    margin-bottom: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.login-field {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-field label {
+    font-size: 1rem;
+    color: #4a2b22;
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.login-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #e0d6d6;
+    border-radius: 6px;
+    background: #f8f5f2;
+    padding: 0 10px;
+}
+
+.login-input-wrap i {
+    color: #bfa08e;
+    font-size: 1.1rem;
+    margin-right: 8px;
+}
+
+.login-input-wrap input {
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 1rem;
+    flex: 1;
+    outline: none;
+    color: #4a2b22;
+}
+
+.login-links {
+    text-align: right;
+    margin-bottom: 18px;
+}
+
+.forgot-link {
+    color: #f07336;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-link:hover {
+    color: #b84c2e;
+    text-decoration: underline;
+}
+
+.login-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-register,
+.btn-login {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-register {
+    background: #ccc;
+    color: #fff;
+}
+
+.btn-register:hover {
+    background: #bfa08e;
+}
+
+.btn-login {
+    background: #f07336;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background: #b84c2e;
+}
+
+
+.login-brand-box {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto 32px auto;
+    border-radius: 12px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 0 10px 0;
+    box-sizing: border-box;
+}
+
+.login-brand-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #3D1101;
+    letter-spacing: 2px;
+    margin: 0 0 4px 0;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    line-height: 1.1;
+}
+
+.login-brand-subtitle {
+    font-size: 1.3rem;
+    color: #3D1101;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+}
+
+@media (max-width: 600px) {
+    .login-brand-box,
+    .card-top-line,
+    .login-box {
+        max-width: 95vw;
+    }
+    .login-brand-title {
+        font-size: 2rem;
+    }
+    .login-brand-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* --- 註冊頁專屬 --- */
+.register-content {
+    background: #f6f1ee;
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 0 0 0;
+}
+
+.register-brand-box {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto 32px auto;
+    border-radius: 12px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 0 10px 0;
+    box-sizing: border-box;
+}
+
+.register-brand-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #3D1101;
+    letter-spacing: 2px;
+    margin: 0 0 4px 0;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+    line-height: 1.1;
+}
+
+.register-brand-subtitle {
+    font-size: 1.3rem;
+    color: #3D1101;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+}
+
+.register-card-top-line {
+    max-width: 765px;
+    width: 100%;
+    height: 4px;
+    background-color: #f47c3c;
+    border-radius: 2px;
+    margin: 0 auto 0 auto;
+    margin-bottom: 0px;
+    /* 先不設間距，讓線緊貼卡片 */
+}
+.register-box {
+    border-radius: 1px;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto 40px auto;
+    padding: 32px 32px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
+}
+
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.register-form-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #4a2b22;
+    margin-bottom: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.register-field {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-field label {
+    font-size: 1rem;
+    color: #4a2b22;
+    margin-bottom: 6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.register-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #e0d6d6;
+    border-radius: 6px;
+    background: #f8f5f2;
+    padding: 0 10px;
+}
+
+.register-input-wrap i {
+    color: #bfa08e;
+    font-size: 1.1rem;
+    margin-right: 8px;
+}
+
+.register-input-wrap input {
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 1rem;
+    flex: 1;
+    outline: none;
+    color: #4a2b22;
+}
+
+.register-links {
+    text-align: right;
+    margin-bottom: 18px;
+}
+
+.forgot-link {
+    color: #f07336;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-link:hover {
+    color: #b84c2e;
+    text-decoration: underline;
+}
+
+.register-btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-register {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    background: #f07336;
+    color: #fff;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-register:hover {
+    background: #b84c2e;
+}
+
+/* 註冊表單左右排版 */
+.register-flex {
+    display: flex;
+    gap: 49px; /* 與設計稿一致 */
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 49px;
+    padding-bottom: 49px;
+    box-sizing: border-box;
+}
+
+/* 條款區塊 */
+.register-terms {
+    width: 320px;
+    min-width: 220px;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+}
+
+.terms-title {
+    font-size: 1.1rem;
+    color: #3D1101;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.terms-content {
+    font-size: 1rem;
+    color: #3D1101;
+    line-height: 1.6;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
+}
+
+/* 表單寬度與設計稿一致 */
+.register-form {
+    width: 320px;
+    min-width: 220px;
+}
+
+/* RWD：手機版直排 */
+@media (max-width: 768px) {
+    .register-flex {
+        flex-direction: column;
+        gap: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    .register-terms,
+    .register-form {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .register-brand-box,
+    .card-top-line,
+    .register-box {
+        max-width: 95vw;
+    }
+    .register-brand-title {
+        font-size: 2rem;
+    }
+    .register-brand-subtitle {
+        font-size: 1rem;
+    }
+}
