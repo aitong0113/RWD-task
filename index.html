@@ -7,7 +7,7 @@
     <!-- RWD 響應式必要設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 將樣式統一放到 /css/style.css，所有頁面可共用此路徑 -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- 單一 Font Awesome 引用 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -40,34 +40,43 @@
     <div class="content">
         <!-- section 是語意標籤，讓搜尋引擎和輔助工具更容易理解每一區的內容。 -->
         <section class="features"><!-- 特色 -->
-            <!-- features-title-wrap 讓標題和左右線條可以排成一排（用 flex），方便一起置中、對齊 -->
-            <div class="features-title-wrap">
-                <div class="features-title-line"></div>
-                <h2 class="features-title">客人總是在詢問<br>這麼好吃的秘訣是什麼</h2>
-                <div class="features-title-line"></div>
-            </div>
-
-            <div class="features-list">
-                <div class="feature-item">
-                    <img src="images/feature_1.png" alt="台灣本土蔬菜">
-                    <h3>台灣本土蔬菜</h3>
-                    <p>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et
-                        elit eget elit facilisis tristique. Nam vel iaculis mauris.</p>
+            <div class="features-inner">
+                <!-- features-title-wrap 讓標題和左右線條可以排成一排（用 flex），方便一起置中、對齊 -->
+                <div class="features-title-wrap">
+                    <div class="features-title-lines">
+                        <span class="features-title-line"></span>
+                        <span class="features-title">客人總是在詢問<br>這麼好吃的秘訣是什麼</span>
+                        <span class="features-title-line"></span>
+                    </div>
                 </div>
 
-                <div class="feature-item">
-                    <img src="images/feature_2.png" alt="專業米其林廚師">
-                    <h3>專業米其林廚師</h3>
-                    <p>Sed ullamcorper tellus erat, non ultrices sem tincidunt euismod. Fusce rhoncus porttitor velit,
-                        eu bibendum nibh aliquet vel. Fusce lorem leo, vehicula at nibh quis, facilisis accumsan turpis.
-                    </p>
-                </div>
 
-                <div class="feature-item">
-                    <img src="images/feature_3.png" alt="對於專業不能退讓">
-                    <h3>對於專業不能退讓</h3>
-                    <p>Fusce rhoncus porttitor velit, eu bibendum nibh aliquet vel. Fusce lorem leo, vehicula at nibh
-                        quis, facilisis accumsan turpis.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <img src="images/feature_1.png" alt="台灣本土蔬菜">
+                        <h3>台灣本土蔬菜</h3>
+                        <p>In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer
+                            et
+                            elit eget elit facilisis tristique. Nam vel iaculis mauris.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <img src="images/feature_2.png" alt="專業米其林廚師">
+                        <h3>專業米其林廚師</h3>
+                        <p>Sed ullamcorper tellus erat, non ultrices sem tincidunt euismod. Fusce rhoncus porttitor
+                            velit,
+                            eu bibendum nibh aliquet vel. Fusce lorem leo, vehicula at nibh quis, facilisis accumsan
+                            turpis.
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <img src="images/feature_3.png" alt="對於專業不能退讓">
+                        <h3>對於專業不能退讓</h3>
+                        <p>Fusce rhoncus porttitor velit, eu bibendum nibh aliquet vel. Fusce lorem leo, vehicula at
+                            nibh
+                            quis, facilisis accumsan turpis.</p>
+                    </div>
                 </div>
             </div> <!-- .features-list -->
         </section> <!-- .features -->
@@ -80,12 +89,15 @@
                 <div class="chef-info">
                     <h2 class="chef-title">今日主廚：帕金森、梅在帕</h2>
                     <h3 class="chef-en-title">Tody Chef: Plum in Shock</h3>
-                    <P>Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam
+                    <P>Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate.
+                        Etiam
                         elit
-                        elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed,
+                        elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui
+                        sed,
                         ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.
                         Aliquam
-                        eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius.
+                        eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis
+                        varius.
                         Donec
                         sit amet ligula eget nisi sodales egestas. Aliquam interdum dolor aliquet dolor sollicitudin
                         fermentum.

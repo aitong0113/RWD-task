@@ -141,76 +141,57 @@ body {
 
 /* 標題區塊（含左右線） */
 .features-title-wrap {
-    display: flex;
-    /* 讓內部元素橫向排列 */
-    align-items: center;
-    /* 垂直置中對齊 */
-    justify-content: center;
-    /* 水平置中 */
-    gap: 24px;
-    /* 標題與線條間距 */
-    margin-bottom: 40px;
-    /* 與下方內容的間距 */
-}
-
-/* 左右裝飾線條 */
-.features-title-line {
-    flex: 1;
-    /* 讓線條自動撐开，左右平均 */
-    height: 0.5px;
-    /* 線條高度 */
-    background: #3d3b3a;
-    /* 線條顏色（可依設計稿調整） */
-    max-width: 120px;
-    /* 線條最長寬度 */
-    opacity: 0.6;
-    /* 半透明效果 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48px;
 }
 
 /* 標題本身 */
 .features-title {
-    font-size: 1rem;
-    /* 標題字體大小 */
-    color: #5b2e11;
-    /* 標題顏色 */
-    font-family: 'Microsoft JhengHei', '微軟正黑體', sans-serif;
-    font-weight: 310;
-    /* 字體粗細 */
-    letter-spacing: 1px;
-    /* 字距 */
-    padding: 20px 0 16px 20px;
-    /* 標題左右內距 */
-    text-align: center;
-    /* 文字置中 */
-    line-height: 1.4;
-    /* 行高 */
+  font-size: 1rem;
+  color: #5b2e11;
+  letter-spacing: 1px;
+  white-space: nowrap; /* 防止斷行 */
 }
 
+/* 新增：線條容器 */
+.features-title-lines {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* 左右裝飾線條 */
+.features-title-line {
+  width: 120px;
+  height: 1px;
+  background-color: #e7cfc2;
+}
 
 /* 三欄排版，讓三個特色橫向排列 */
 .features-list {
-    display: flex;
-    /* 彈性盒子，橫向排列 */
-    justify-content: center;
-    /* 水平置中 */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-    /* 三欄間距 */
-    flex-wrap: wrap;
-    /* 超過寬度時自動換行，方便 RWD */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.features-inner {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* 每一個特色項目 */
 .feature-item {
-    width: 300px;
-    /* 固定寬度，讓三欄整齊 */
+    width: 100%;
+    max-width: 300px;
     display: flex;
-    /* 彈性盒子，垂直排列內容 */
     flex-direction: column;
-    /* 垂直排列 */
     align-items: center;
-    /* 水平置中 */
     margin-bottom: 32px;
-    /* RWD 時換行也有間距 */
 }
 
 /* 圓形圖片 */
@@ -239,6 +220,7 @@ body {
     font-weight: 500;
     /* 字體粗細 */
 }
+
 
 /* 特色說明文字 */
 .feature-item p {
@@ -657,113 +639,175 @@ body {
 
 
 
-/* 響應式設計：平板與手機 
-max-width: 1024px：平板以下，讓內容區塊寬度縮小、間距變小。
-max-width: 768px：手機版，所有 flex 容器改為 column（直排），內容全寬。
-max-width: 480px：小手機，字體、icon 再縮小，padding 再減少。
-booking、footer、chef 等區塊都會自動變成上下排列，icon 也會縮小
-*/
+/* 響應式設計整理 */
+
+/* 1024px 以下：平板 */
 @media (max-width: 1024px) {
+  .header-inner,
+  .footer-container,
+  .chef-inner,
+  .booking-inner {
+    max-width: 95vw;
+    padding: 0 16px;
+  }
 
-    .header-inner,
-    .footer-container,
-    .chef-inner,
-    .booking-inner {
-        max-width: 95vw;
-        padding: 0 16px;
-    }
+  .features-list,
+  .reviews-list {
+    gap: 16px;
+  }
 
-    .features-list,
-    .reviews-list {
-        gap: 16px;
-    }
+  .review-item,
+  .feature-item {
+    width: 90vw;
+    max-width: 350px;
+  }
 
-    .review-item,
-    .feature-item {
-        width: 90vw;
-        max-width: 350px;
-    }
+  .booking-inner {
+    gap: 16px;
+  }
 
-    .booking-inner {
-        gap: 16px;
-    }
+  .product-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .container-grid {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
 }
 
+/* 768px 以下：手機 */
 @media (max-width: 768px) {
+  .header-inner,
+  .footer-container,
+  .chef-inner,
+  .booking-inner {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100vw;
+    padding: 0 8px;
+  }
 
-    .header-inner,
-    .footer-container,
-    .chef-inner,
-    .booking-inner {
-        flex-direction: column;
-        align-items: stretch;
-        max-width: 100vw;
-        padding: 0 8px;
-    }
+  .features-list,
+  .reviews-list {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .features-list,
-    .reviews-list {
-        flex-direction: column;
-        align-items: center;
-    }
+  .review-item,
+  .feature-item {
+    width: 100%;
+    max-width: 100%;
+  }
 
-    .review-item,
-    .feature-item {
-        width: 100%;
-        max-width: 100%;
-    }
+  .chef-inner,
+  .booking-inner {
+    gap: 24px;
+  }
 
-    .chef-inner,
-    .booking-inner {
-        gap: 24px;
-    }
+  .booking-map,
+  .booking-form {
+    max-width: 100%;
+  }
 
-    .booking-map,
-    .booking-form {
-        max-width: 100%;
-    }
+  .footer-brand h2 {
+    font-size: 2rem;
+  }
 
-    .footer-brand h2 {
-        font-size: 2rem;
-    }
+  .footer-info h3,
+  .footer-contact h3 {
+    font-size: 1.3rem;
+  }
 
-    .footer-info h3,
-    .footer-contact h3 {
-        font-size: 1.3rem;
-    }
+  .register-flex {
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .register-terms,
+  .register-form {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
+/* 600px 以下：小手機 */
+@media (max-width: 600px) {
+  .product-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card-media img {
+    height: 180px;
+  }
+
+  .search-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .login-brand-box,
+  .card-top-line,
+  .login-box,
+  .register-brand-box,
+  .register-box {
+    max-width: 95vw;
+  }
+
+  .login-brand-title,
+  .register-brand-title {
+    font-size: 2rem;
+  }
+
+  .login-brand-subtitle,
+  .register-brand-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* 480px 以下：極小手機 */
 @media (max-width: 480px) {
-    .hero-inner {
-        width: 95vw;
-        padding: 16px 4px;
-    }
+  .hero-inner {
+    width: 95vw;
+    padding: 16px 4px;
+  }
 
-    .features,
-    .chef,
-    .reviews,
-    .booking,
-    .footer {
-        padding: 32px 0;
-    }
+  .features,
+  .chef,
+  .reviews,
+  .booking,
+  .footer {
+    padding: 32px 0;
+  }
 
-    .footer-brand h2 {
-        font-size: 1.3rem;
-    }
+  .footer-brand h2 {
+    font-size: 1.3rem;
+  }
 
-    .footer-social a {
-        font-size: 24px;
-        margin: 0 4px;
-    }
+  .footer-social a {
+    font-size: 24px;
+    margin: 0 4px;
+  }
 }
-
-
-
-
-
-
-
-
 
 /* product 頁專屬 */
 .product-content {
@@ -960,7 +1004,6 @@ booking、footer、chef 等區塊都會自動變成上下排列，icon 也會縮
 }
 
 .features {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
@@ -1046,16 +1089,7 @@ booking、footer、chef 等區塊都會自動變成上下排列，icon 也會縮
         grid-template-columns: 1fr 1fr;
         gap: 18px;
     }
-}
 
-@media (max-width: 600px) {
-    .product-features {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-}
-
-@media (max-width: 1024px) {
     .container-grid {
         flex-direction: column;
         gap: 18px;
@@ -1073,6 +1107,11 @@ booking、footer、chef 等區塊都會自動變成上下排列，icon 也會縮
 }
 
 @media (max-width: 600px) {
+    .product-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
     .features {
         grid-template-columns: 1fr;
         gap: 12px;
